@@ -1,8 +1,5 @@
 ![Build](https://github.com/anclrii/Storj-Exporter/workflows/Build/badge.svg)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/anclrii/Storj-exporter)
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
-
-[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/banner2-direct.svg)](https://stand-with-ukraine.pp.ua)
 
 ## About
 
