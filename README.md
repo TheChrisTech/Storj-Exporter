@@ -1,5 +1,4 @@
-![Build](https://github.com/anclrii/Storj-Exporter/workflows/Build/badge.svg)
-![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/anclrii/Storj-exporter)
+![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/TheChrisTech/Storj-Exporter)
 
 ## About
 
@@ -22,7 +21,7 @@ Tested with storj node versions listed under `tests/api_mock/`
 #### Docker installation
 ##### Run latest build from DockerHub (easiest option, assuming `storagenode` is the name of the storagenode container)
 
-    docker run -d --link=storagenode --name=storj-exporter -p 9651:9651 -e STORJ_HOST_ADDRESS=storagenode anclrii/storj-exporter:latest
+    docker run -d --link=storagenode --name=storj-exporter -p 9651:9651 -e STORJ_HOST_ADDRESS=storagenode thechristech/storj-exporter:latest
 
 Docker image supports `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64` platforms.
 
@@ -30,9 +29,9 @@ Docker image supports `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm
 
 In this example `storagenode1, storagenode2, storagenode3` are the names of storagenode containers runnin on the same host. The docker commands would be:
 
-    docker run -d --link=storagenode1 --name=storj-exporter1 -p 9651:9651 -e STORJ_HOST_ADDRESS=storagenode1 anclrii/storj-exporter:latest
-    docker run -d --link=storagenode2 --name=storj-exporter2 -p 9652:9651 -e STORJ_HOST_ADDRESS=storagenode2 anclrii/storj-exporter:latest
-    docker run -d --link=storagenode3 --name=storj-exporter3 -p 9653:9651 -e STORJ_HOST_ADDRESS=storagenode3 anclrii/storj-exporter:latest
+    docker run -d --link=storagenode1 --name=storj-exporter1 -p 9651:9651 -e STORJ_HOST_ADDRESS=storagenode1 thechristech/storj-exporter:latest
+    docker run -d --link=storagenode2 --name=storj-exporter2 -p 9652:9651 -e STORJ_HOST_ADDRESS=storagenode2 thechristech/storj-exporter:latest
+    docker run -d --link=storagenode3 --name=storj-exporter3 -p 9653:9651 -e STORJ_HOST_ADDRESS=storagenode3 thechristech/storj-exporter:latest
 
 #### Systemd service installation
 
@@ -63,7 +62,7 @@ In this example `storagenode1, storagenode2, storagenode3` are the names of stor
 
 ## Installing full monitoring stack (Prometheus + Grafana + Dashboard)
 
-You can find some installation notes and guides in [dashboard README](https://github.com/anclrii/Storj-Exporter-dashboard#installing-full-monitoring-stack), also see [quick-start guide](https://github.com/anclrii/Storj-Exporter-dashboard/tree/master/quick_start) to set up the whole stack using docker-compose.
+You can find some installation notes and guides in [dashboard README](https://github.com/thechristech/Storj-Exporter-dashboard#installing-full-monitoring-stack), also see [quick-start guide](https://github.com/thechristech/Storj-Exporter-dashboard/tree/master/quick_start) to set up the whole stack using docker-compose.
 
 ## Variables
 Following environment variables are available:
