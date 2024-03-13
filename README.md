@@ -2,17 +2,17 @@
 
 ## About
 
+This repository is forked off of [anclrii/Storj-Exporter]((https://github.com/anclrii/Storj-Exporter), which unfortunately has gone quiet. This repository was created to fix bugs and add additional features. All original work is credited to anclrii (Thank you!).
+
 Storj exporter for Prometheus written in python. It pulls information from storj node api for `node`, `satellite` and `payout` metrics.
 
 Also check out [Storj-Exporter-dashboard](https://github.com/anclrii/Storj-Exporter-dashboard) for Grafana to visualise metrics for multiple storj nodes.
 
-Tested with storj node versions listed under `tests/api_mock/`
-
-<img src="https://github.com/anclrii/Storj-Exporter-dashboard/raw/master/storj-exporter-boom-table.png" alt="0x187C8C43890fe4C91aFabbC62128D383A90548Dd" hight=490 width=490 align="right"/> 
+<img src="https://github.com/anclrii/Storj-Exporter-dashboard/raw/master/Storj-Exporter-v0.1.png" height=1187 width=490 align="right"/> 
 
 ## Usage
 
-* Exporter can be installed as a docker container or a systemd service or a standalone script
+* Exporter can be installed as a docker container, a systemd service or a standalone script
 * Make sure you have `-p 127.0.0.1:14002:14002` in storagenode container docker run command to allow local connections to storj node api
 * `storagenode` is the default value for `STORJ_HOST_ADDRESS` environment variable that sets the address of the storage node container used to link exporter to the api
 * If you storagenode container has a different name it needs to be set with both `--link=<storagenode-name-here>` and `-e STORJ_HOST_ADDRESS=<storagenode-name-here>` on the docker command
@@ -23,7 +23,7 @@ Tested with storj node versions listed under `tests/api_mock/`
 
     docker run -d --link=storagenode --name=storj-exporter -p 9651:9651 -e STORJ_HOST_ADDRESS=storagenode thechristech/storj-exporter:latest
 
-Docker image supports `linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64` platforms.
+Docker image supports `linux/386,linux/amd64,linux/arm64,linux/arm/v6,linux/arm/v7,linux/arm/v8` platforms.
 
 ##### Run multiple instances of exporter to monitor multiple storagenodes running on the same host
 
@@ -72,6 +72,7 @@ Following environment variables are available:
 | STORJ_HOST_ADDRESS | Address of the storage node | storagenode | 127.0.0.1 |
 | STORJ_API_PORT | Storage node api port | 14002 | 14002 |
 | STORJ_API_TIMEOUT | Storage node api timeout | 90 | 90 |
+| STORJ_EXPORTER_ADDRESS | Address to expose metrics on - useful for reverse proxy | 127.0.0.1 | 127.0.0.1 |
 | STORJ_EXPORTER_PORT | A port that exporter opens to expose metrics on | 9651 | 9651 |
 | STORJ_COLLECTORS | A list of collectors | payout sat | payout sat |
 

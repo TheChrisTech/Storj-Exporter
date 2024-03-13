@@ -64,8 +64,9 @@ def start_wsgi_server(port, addr='', registry=REGISTRY):
 def main():
     """Read in environment variables"""
     storj_host_address = os.environ.get('STORJ_HOST_ADDRESS', '127.0.0.1')
-    storj_api_port = os.environ.get('STORJ_API_PORT', '14002')
+    storj_api_port = int(os.environ.get('STORJ_API_PORT', '14002'))
     storj_api_timeout = int(os.environ.get('STORJ_API_TIMEOUT', '90'))
+    storj_exporter_address = os.environ.get('STORJ_EXPORTER_ADDRESS', '')
     storj_exporter_port = int(os.environ.get('STORJ_EXPORTER_PORT', '9651'))
     storj_collectors = os.environ.get('STORJ_COLLECTORS', 'payout sat').split()
     log_level = os.environ.get('STORJ_EXPORTER_LOG_LEVEL', 'INFO').upper()
@@ -96,7 +97,7 @@ def main():
         logger.info('Registering sat collector')
         REGISTRY.register(sat_collector)
 
-    start_wsgi_server(storj_exporter_port, '')
+    start_wsgi_server(storj_exporter_port, storj_exporter_address)
 
 
 if __name__ == '__main__':
