@@ -8,7 +8,7 @@ Storj exporter for Prometheus written in python. It pulls information from storj
 
 Also check out [Storj-Exporter-dashboard](https://github.com/anclrii/Storj-Exporter-dashboard) for Grafana to visualise metrics for multiple storj nodes.
 
-<img src="https://github.com/anclrii/Storj-Exporter-dashboard/raw/master/Storj-Exporter-v0.1.png" height=1187 width=490 align="right"/> 
+<img src="https://github.com/anclrii/Storj-Exporter-dashboard/raw/master/Storj-Exporter.png" height=1187 width=490 align="right"/> 
 
 ## Usage
 
